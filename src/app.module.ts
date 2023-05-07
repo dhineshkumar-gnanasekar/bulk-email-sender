@@ -9,10 +9,10 @@ import { AuthGuard } from './auth/auth.guard';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://dhineshkumar_blocks:etMCGslo0Y1i9Lz0@cluster0.tqviv6c.mongodb.net/bulk_mailer?retryWrites=true&w=majority',
-      { useNewUrlParser: true },
-    ),
+    // MongooseModule.forRoot(
+    //   '',
+    //   { useNewUrlParser: true },
+    // ),
     UserModule,
     AuthModule,
   ],
