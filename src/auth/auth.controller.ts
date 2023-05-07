@@ -19,7 +19,11 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @Post('login')
   async Login(@Body() loginUser: Auth) {
-    return this.service.login(loginUser);
+    try {
+      return this.service.login(loginUser);
+    } catch (e) {
+      console.log(e, 'e');
+    }
   }
 
   @Get('profile')
