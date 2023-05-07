@@ -15,7 +15,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "axios": "^1.4.0",
+    "js-cookie": "^3.0.5",
     "pinia": "^2.0.35",
+    "pinia-plugin-persistedstate": "^3.1.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
