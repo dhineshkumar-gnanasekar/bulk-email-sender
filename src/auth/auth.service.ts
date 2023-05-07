@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { comparePassword } from 'src/shared/bcrypt';
 import { UserService } from 'src/user/user.service';
@@ -27,10 +27,10 @@ export class AuthService {
           email: checkUser.email,
         };
       } else {
-        return 'Invalid Login';
+        throw new UnauthorizedException('Invalid User Name or Password');
       }
     } else {
-      return 'Invalid Login';
+      throw new NotFoundException('Invalid User Name or Password');
     }
   }
 }

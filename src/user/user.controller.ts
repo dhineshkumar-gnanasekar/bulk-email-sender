@@ -8,13 +8,11 @@ export class UserController {
 
   @Get(':id')
   async find(@Param('id') id: string) {
-    console.log('id', id);
     return await this.service.find(id);
   }
 
   @Post('newuser')
   async create(@Body() user: User) {
-    console.log('user');
     return await this.service.create(user);
   }
 }

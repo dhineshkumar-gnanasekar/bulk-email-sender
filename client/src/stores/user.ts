@@ -1,7 +1,7 @@
+import cookie from 'js-cookie'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import UserService from '../service/user.service'
-import cookie from 'js-cookie'
 
 export const useUserStore = defineStore(
   'user',
@@ -10,9 +10,14 @@ export const useUserStore = defineStore(
     const lastName = ref('')
     const email = ref('')
 
+    function reset() {
+      firstName.value = ''
+      lastName.value = ''
+      email.value = ''
+    }
     async function login(uname: any, password: any) {
       const user = await UserService.login(uname, password)
-      if (user !== 'Invalid Login') {
+      if (user.access_token) {
         cookie.set('sessCookie', user.access_token)
         firstName.value = user.firstName
         lastName.value = user.lastName
@@ -23,7 +28,7 @@ export const useUserStore = defineStore(
       }
     }
 
-    return { firstName, lastName, email, login }
+    return { firstName, lastName, email, reset, login }
   },
   {
     persist: true

@@ -6,5 +6,4 @@ import { useUserStore } from '@/stores/user'
 
 const userStore = useUserStore()
 
-console.log(userStore.email,"user");
 </script>

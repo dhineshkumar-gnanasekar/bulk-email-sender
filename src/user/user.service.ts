@@ -20,7 +20,6 @@ export class UserService {
   }
 
   async find(id: string) {
-    console.log('find', id);
     const foundUser = this.userModel.findById(id);
     if (foundUser) {
       return foundUser;

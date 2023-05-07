@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import {  RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import Header from './components/Header.vue'
+import { useUserStore } from '@/stores/user'
+
+const userStore = useUserStore()
 </script>
 
 <template>
+  <Header v-if="userStore.email" />
   <RouterView />
 </template>
-
 <style scoped>
 header {
   line-height: 1.5;
