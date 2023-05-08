@@ -27,6 +27,14 @@ router.beforeEach(async (to, from) => {
     // redirect the user to the login page
     return { name: 'Login' }
   }
+  if(cookie.get('sessCookie') && to.name == 'Login') {
+    return { name: 'Home' }
+  }
+  if(!cookie.get('sessCookie') &&
+    // ❗️ Avoid an infinite redirect
+    to.name == 'Login') {
+      userStore.reset()
+    }
 })
 
 app.mount('#app')
