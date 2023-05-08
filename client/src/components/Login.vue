@@ -16,12 +16,28 @@
       </div>
       <div class="flex justify-center mx-auto my-4">
         <div class="w-full">
-          <input class="w-full h-10" type="text" placeholder="Email" v-model="uName" />
+          <input
+            class="w-full h-10"
+            type="text"
+            placeholder="Email"
+            v-model="uName"
+            @input="invalidLogin = false"
+            @focus="invalidLogin = false"
+            @keydown.enter.exact.prevent="login()"
+          />
         </div>
       </div>
       <div class="flex justify-center mx-auto my-4">
         <div class="w-full">
-          <input class="w-full h-10" type="password" placeholder="Password" v-model="password" />
+          <input
+            class="w-full h-10"
+            type="password"
+            placeholder="Password"
+            v-model="password"
+            @input="invalidLogin = false"
+            @focus="invalidLogin = false"
+            @keydown.enter.exact.prevent="login()"
+          />
         </div>
       </div>
       <div class="flex justify-center mx-auto">

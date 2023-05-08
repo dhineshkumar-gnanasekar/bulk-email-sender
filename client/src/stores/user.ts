@@ -2,6 +2,7 @@ import cookie from 'js-cookie'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import UserService from '../service/user.service'
+import router from '../router'
 
 export const useUserStore = defineStore(
   'user',
@@ -28,7 +29,13 @@ export const useUserStore = defineStore(
       }
     }
 
-    return { firstName, lastName, email, reset, login }
+    function logout() {
+        cookie.remove('sessCookie');
+        reset();
+        router.push({ path: '/login' })
+    }
+
+    return { firstName, lastName, email, reset, login, logout }
   },
   {
     persist: true

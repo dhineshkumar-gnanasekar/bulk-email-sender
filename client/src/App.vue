@@ -7,8 +7,10 @@ const userStore = useUserStore()
 </script>
 
 <template>
-  <Header v-if="userStore.email" />
-  <RouterView />
+  <div class="h-screen">
+    <Header v-if="userStore.email" />
+    <RouterView />
+  </div>
 </template>
 <style scoped>
 header {
