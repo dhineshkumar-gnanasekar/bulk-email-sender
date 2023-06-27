@@ -39,7 +39,7 @@
           <div class="px-4 hover:bg-gray-600 cursor-pointer mb-1">Profile</div>
           <div class="px-4 hover:bg-gray-600 cursor-pointer mb-1" @click="logout()">Sign out</div>
           <div
-            class="absolute right-[23px] top-0 transform -translate-x-1/2 -translate-y-1/2 rotate-45 w-4 h-4 border-l border-t border-b-0 border-r-0 border-gray-400 bg-gray-800"
+            class="absolute right-[23px] top-0 transform -translate-x-1/2 -translate-y-1/2 rotate-45 w-4 h-4 border-l border-t border-b-0 border-r-0 border-gray-400 bg-gray-700"
           ></div>
         </div>
       </div>
